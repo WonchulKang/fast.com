@@ -33,7 +33,7 @@ SOFTWARE.
 """
 
 setup(name='fastdotcom',
-      version='0.0.5',
+      version='0.0.6',
       description='Python API for testing internet speed on Fast.com',
       url='https://github.com/nkgilley/fast.com',
       author='Nolan Gilley',

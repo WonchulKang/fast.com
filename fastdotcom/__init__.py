@@ -506,13 +506,13 @@ def upload_js_comparable_dynamic_test(token, verbose=False, max_time=15, candida
     
     Parameters:
         candidate_sizes: list of payload chunk sizes in bytes.
-                         Defaults to [64KB, 128KB, 256KB, 512KB].
+                         Defaults to [64KB, 128KB, 256KB, 512KB, 1MB, 10MB].
     
     Returns:
         int: Highest upload speed in Mbps (rounded to 0 decimals).
     """
     if candidate_sizes is None:
-        candidate_sizes = [64 * 1024, 128 * 1024, 256 * 1024, 512 * 1024, 1024 * 1024, 2048 * 1024]
+        candidate_sizes = [64 * 1024, 128 * 1024, 256 * 1024, 512 * 1024, 1024 * 1024, 10 * 1024 * 1024]
 
     best_speed = 0
     start_time = time.perf_counter()

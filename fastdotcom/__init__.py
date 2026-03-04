@@ -470,13 +470,15 @@ def upload_js_comparable_test(token, verbose=False, max_time=15, payload_chunk_s
     if verbose:
         print("Using upload URL (JS-comparable):", url_to_use)
 
+    temp_chunk = os.urandom(20 * 1024 * 1024)
+
     start = time.perf_counter()
     total_bytes = 0
 
     def data_generator():
         nonlocal total_bytes
         while time.perf_counter() - start < max_time:
-            chunk = os.urandom(payload_chunk_size)
+            chunk = temp_chunk[:payload_chunk_size]
             total_bytes += len(chunk)
             yield chunk
 
